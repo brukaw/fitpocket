@@ -1,0 +1,7 @@
+{
+  "name": "testeum",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
