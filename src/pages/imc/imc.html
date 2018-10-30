@@ -1,0 +1,60 @@
+<ion-header>
+
+  <ion-navbar color="smart2">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>IMC</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+
+
+<!-- AVISO DE COMO USAR -->
+  <ion-card>
+    <ion-card-content>
+      <p id=aviso>
+        Para realizar o cálculo digite sua altura em metros (ex: 1,65) e o seu peso em Kg (ex: 65,75).
+      </p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-list>
+    <ion-item>
+      <ion-label stacked>
+        Digite sua altura
+      </ion-label>
+      <ion-input type="number" (input)="altura = $event.target.value" placeholder="1.55"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>
+        Digite seu peso
+      </ion-label>
+      <ion-input type="number" (input)="peso = $event.target.value" placeholder="85.70"></ion-input>
+    </ion-item>
+  </ion-list>
+
+<!-- BOTÃO (CALCULAR) -->
+  <button ion-button full color="smart2" (click)="calcular()">Calcular</button>
+  <br>
+
+<!-- MENSAGEM QUE INFORMA O IMC -->
+  <div *ngIf="imc > 0">
+    <ion-card>
+      <ion-card-header>
+        IMC: {{ imc }}
+      </ion-card-header>
+      <ion-card-content>
+        <p><ion-icon margin="5px" name="md-send"></ion-icon>Situação: {{ condicao }}</p>
+        <br>
+        <p><ion-icon margin="5px" name="md-thumbs-up"></ion-icon>IMC saudável fica entre 18,5 a 25.</p>
+      </ion-card-content>
+    </ion-card>
+
+      <button ion-button block type="submit" color="blue" (click)="saveImc(imc)">Salvar IMC</button>
+  </div>
+
+</ion-content>

@@ -1,18 +1,60 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="smart2">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Home</ion-title>
+    <ion-title color="dark">Home</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+<ion-content>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
+  <ion-slides pager>
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+    <ion-slide class="fundo">
+      <h1 class="h1">Dicas de Treino</h1>
+    </ion-slide>
+
+    <ion-slide>
+      <ion-card>
+        <ion-card-content>
+          <ion-card-title>
+            Hipertrofia
+          </ion-card-title>
+          <p class="p">
+              Comer proteínas como frango, peixe, ovos, leite e carne vermelha numa frequencia
+              de 5 a 7 refeições por dia ajudará no crescimento e reparação da musculatura. <br>
+              Comer gorduras encontradas nos peixes, óleo de linhaça ou nozes, para prevenir o
+              acumulo de gordura indesejada. Vitaminas encontradas em vegetais (3 a 5 porções
+              por dia) e frutas (2 a 4 porções ao dia), e Carboidratos como da batata doce e do
+              inhame. <br>
+              Você precisa consumir 300 a 500 calorias diárias a mais do que você gasta para
+              construir músculo. É importante que essa alimentação seja rica em Proteínas, Vitaminas
+              e Carboidratos para aumentar as fibras musculares.
+          </p>
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
+
+    <ion-slide>
+      <ion-card>
+        <ion-card-content>
+          <ion-card-title>
+            Dicas para Emagrecer
+          </ion-card-title>
+          <p class="p">
+              Muitas pessoas acham que com dietas elas conseguem emagrecer, porém isso é um mito,
+              a melhor forma é comer, só que de maneira saudável. Alimentos como frutas e vegetais,
+              pois possuem baixas calorias e muitas fibras, são uma combinação perfeita para manter
+              o seu corpo saciado por mais tempo. Beber bastante água, para acelerar o metabolismo,
+              pricipalmente antes das refeições. Não ficar mais do que 4 ou 5 horas sem comer, pois isso
+              pode ser prejudicial a saúde. Levantar peso pode ser de grande ajuda, já que com as mudanças
+              para o emgrecimento os músculos podem enfraquecer. Exercicios como: AB Roller, Leg Press,
+              Peitoral Supino, Flexão e Pull Ups.
+          </p>
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
+
+  </ion-slides>
 </ion-content>

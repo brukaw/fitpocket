@@ -1,0 +1,73 @@
+<ion-header>
+
+  <ion-navbar color="smart2">
+    <ion-title>Entrar</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="background">
+  <form [formGroup]="form">
+      <ion-item>
+        <ion-label stacked>E-mail</ion-label>
+        <ion-input type="email" formControlName="email"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!form.controls.email.valid && (form.controls.email.dirty || form.controls.email.touched)" color="danger">
+          <div [hidden]="!form.controls.email.errors.required">
+            O Campo é Obrigatório
+          </div>
+        </ion-item>
+
+      <ion-item>
+        <ion-label stacked>Senha</ion-label>
+        <ion-input type="password" formControlName="password"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!form.controls.password.valid && (form.controls.password.dirty || form.controls.password.touched)" color="danger">
+          <div [hidden]="!form.controls.password.errors.required">
+            O Campo é Obrigatório
+          </div>
+        </ion-item>
+      <div padding>
+        <button ion-button block (click)="onSubmit()" type="submit" [disabled]="!form.valid">Entrar</button>
+      </div>
+
+    <button ion-button block color="light" clear navPush="" (click)="esqueciSenha()">Esqueci minha senha</button>
+    <button ion-button block color="light" clear navPush="" (click)="abrirConta()">Criar Conta</button>
+    <!-- <button ion-button block color="dark" (click)="signOut()" clear navPush="">Sair Conta</button> -->
+  </form>
+
+
+  <!-- <form #form="ngForm" novalidate>
+    <ion-list>
+
+      <ion-item>
+        <ion-label stacked>E-mail</ion-label>
+        <ion-input type="text" name="email" [(ngModel)]="user.email" #email="ngModel" required></ion-input>
+      </ion-item>
+      <ion-item *ngIf="email.errors && (email.dirty || email.touched)" class="text-danger">
+        O campo é obrigatório
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>Senha</ion-label>
+        <ion-input type="password" name="password" [(ngModel)]="user.password" #password="ngModel" required></ion-input>
+      </ion-item>
+      <ion-item *ngIf="password.errors && (password.dirty || password.touched)" class="text-danger">
+        O campo é obrigatório
+      </ion-item>
+
+    </ion-list>
+
+    <button ion-button block color="primary" [disabled]="!form.form.valid" (click)="signIn()">
+      Entrar
+    </button>
+  </form>
+
+  <button ion-button block clear margin-top (click)="resetPassword()">
+    Esqueci Minha Senha
+  </button>
+  <button ion-button block clear (click)="createAccount()">
+    Criar Conta
+  </button> -->
+</ion-content>

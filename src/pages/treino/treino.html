@@ -1,0 +1,81 @@
+z<ion-header>
+
+  <ion-navbar color="smart2">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Treino</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+  <div padding>
+    <ion-segment [(ngModel)]="treino" color="dark">
+      <ion-segment-button value="a">
+        Treino A
+      </ion-segment-button>
+      <ion-segment-button value="b">
+        Treino B
+      </ion-segment-button>
+      <ion-segment-button value="c">
+        Treino C
+      </ion-segment-button>
+      <ion-segment-button value="d">
+        Treino D
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <div [ngSwitch]="treino">
+
+    <ion-list *ngSwitchCase="'a'">
+      <ion-item-sliding *ngFor="let exercicio of a | async">
+        <ion-item>
+          <h3>{{exercicio.exercicio}}</h3>
+        </ion-item>
+        <ion-item-options side="left">
+          <button ion-button color="danger" (click)="removeExA(exercicio)"> <ion-icon name="trash"></ion-icon> Remover </button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'b'">
+      <ion-item-sliding *ngFor="let exercicio of b | async">
+        <ion-item>
+          <h3>{{exercicio.exercicio}}</h3>
+        </ion-item>
+        <ion-item-options side="left">
+          <button ion-button color="danger" (click)="removeExB(exercicio)"> <ion-icon name="trash"></ion-icon> Remover </button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'c'">
+      <ion-item-sliding *ngFor="let exercicio of c | async">
+        <ion-item>
+          <h3>{{exercicio.exercicio}}</h3>
+        </ion-item>
+        <ion-item-options side="left">
+          <button ion-button color="danger" (click)="removeExC(exercicio)"> <ion-icon name="trash"></ion-icon> Remover </button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'d'">
+      <ion-item-sliding *ngFor="let exercicio of d | async">
+        <ion-item>
+          <h3>{{exercicio.exercicio}}</h3>
+        </ion-item>
+        <ion-item-options side="left">
+          <button ion-button color="danger" (click)="removeExD(exercicio)"> <ion-icon name="trash"></ion-icon> Remover </button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+
+  </div>
+
+  <ion-fab right bottom>
+    <button ion-fab color="smart2" (click)="newExercicio()"><ion-icon name="add" color="dark"></ion-icon></button>
+  </ion-fab>
+</ion-content>

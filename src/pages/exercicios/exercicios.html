@@ -1,0 +1,94 @@
+<ion-header>
+
+  <ion-navbar color="smart2">
+    <ion-title>Exercicios</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <div padding>
+    <ion-segment [(ngModel)]="exercicios" color="dark">
+      <ion-segment-button value="braco">
+        Braço
+      </ion-segment-button>
+      <ion-segment-button value="perna">
+        Perna
+      </ion-segment-button>
+      <ion-segment-button value="peito">
+        Peito
+      </ion-segment-button>
+      <ion-segment-button value="costas">
+        Costas
+      </ion-segment-button>
+      <!-- <ion-segment-button value="abdomen">
+        Abdômen
+      </ion-segment-button> -->
+      <ion-segment-button value="ombro">
+        Ombro
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+
+  <div [ngSwitch]="exercicios">
+
+    <ion-list *ngSwitchCase="'braco'">
+      <ion-item-sliding *ngFor="let exercicio of braco | async">
+        <ion-item>
+          <h3>{{exercicio.nome}}</h3>
+        </ion-item>
+        <ion-item-options side="left">
+          <button ion-button color="secondary" (click)="addExercice(exercicio)"><ion-icon name="add"></ion-icon>Adicionar</button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'perna'">
+      <ion-item-sliding *ngFor="let exercicio of perna | async">
+        <ion-item>
+          <h3>{{exercicio.nome}}</h3>
+        </ion-item>
+        <ion-item-options side="left">
+          <button ion-button color="secondary" (click)="addExercice(exercicio)"><ion-icon name="add"></ion-icon>Adicionar</button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'peito'">
+      <ion-item-sliding *ngFor="let exercicio of peito | async">
+        <ion-item>
+          <h3>{{exercicio.nome}}</h3>
+        </ion-item>
+        <ion-item-options side="left">
+          <button ion-button color="secondary" (click)="addExercice(exercicio)"><ion-icon name="add"></ion-icon>Adicionar</button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'costas'">
+      <ion-item-sliding *ngFor="let exercicio of costas | async">
+        <ion-item>
+          <h3>{{exercicio.nome}}</h3>
+        </ion-item>
+        <ion-item-options side="left">
+          <button ion-button color="secondary" (click)="addExercice(exercicio)"><ion-icon name="add"></ion-icon>Adicionar</button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'ombro'">
+      <ion-item-sliding *ngFor="let exercicio of ombro | async">
+        <ion-item>
+          <h3>{{exercicio.nome}}</h3>
+        </ion-item>
+        <ion-item-options side="left">
+          <button ion-button color="secondary" (click)="addExercice(exercicio)"><ion-icon name="add"></ion-icon>Adicionar</button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+
+
+  </div>
+</ion-content>

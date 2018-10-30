@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar color="smart2">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Minha Conta</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="titles">
+    <h5>Bom Treino {{userName}}</h5>
+    <p>E-mail: {{userEmail}}</p>
+</div>
+  <br>
+
+  <h3 class="titles">Últimas Medidas</h3>
+
+  <ion-list>
+    <ion-item-sliding *ngFor="let medida of medidas | async">
+      <ion-item>
+        <h3>{{medida.cintura}}</h3>
+        <h3>{{medida.braco}}</h3>
+        <h3>{{medida.peitoral}}</h3>
+        <h3>{{medida.coxa}}</h3>
+        <h3>{{medida.panturrilha}}</h3>
+      </ion-item>
+      <ion-item-options side="left">
+        <button ion-button color="danger" (click)="removeMedidas(medida.key)"><ion-icon name="trash"></ion-icon>Remover</button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+  <button ion-button block color="smart2" class="button-sair" (click)="signOut()">
+    Sair
+  </button>
+
+</ion-content>

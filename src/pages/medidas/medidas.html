@@ -1,0 +1,42 @@
+<ion-header>
+
+  <ion-navbar color="smart2">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Medidas</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+<form [formGroup]="form">
+    <ion-item>
+      <ion-label stacked>Cintura</ion-label>
+      <ion-input type="text" formControlName="cintura"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Braço</ion-label>
+      <ion-input type="text" formControlName="braco"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Peitoral</ion-label>
+      <ion-input type="text" formControlName="peitoral"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Coxas</ion-label>
+      <ion-input type="text" formControlName="coxa"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Panturrilha</ion-label>
+      <ion-input type="text" formControlName="panturrilha"></ion-input>
+    </ion-item>
+</form>
+<br>
+<br>
+
+  <button ion-button block class="button" type="submit" color="smart2" (click)="salvarMedidas()">
+    Salvar Medidas
+  </button>
+
+</ion-content>
